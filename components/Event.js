@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 const Event = ({data}) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -17,9 +17,9 @@ const Event = ({data}) => {
             <Text
               onPress={() => setShowDetails(!showDetails)}
               style={styles.details}>
-              + Event details
+              {showDetails ? '-' : '+'} Event details
             </Text>
-            {showDetails && <Text style={styles.title}>{details}</Text>}
+            {showDetails && <Text style={styles.location}>{details}</Text>}
             <View style={styles.separator}></View>
           </View>
         );
@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 17,
     marginTop: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#878588',
+    width: 100,
   },
   date: {
     fontSize: 25,
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 17,
     color: 'white',
-    marginTop: 15,
+    marginVertical: 15,
   },
   divider: {
     borderBottomColor: '#878588',
@@ -65,7 +68,7 @@ const styles = StyleSheet.create({
   },
   separator: {
     borderBottomColor: '#878588',
-    borderBottomWidth: 3,
+    borderBottomWidth: 2,
     marginTop: 20,
   },
 });

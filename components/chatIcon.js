@@ -6,7 +6,7 @@ const chatIcon = () => {
   return (
     <>
       <View style={styles.circle}>
-        <Icon name="message" size={20} color="black" />
+        <Icon name="comment" size={30} color="black" />
       </View>
     </>
   );
@@ -16,12 +16,14 @@ const styles = StyleSheet.create({
   circle: {
     width: 60,
     height: 60,
-    borderRadius: 50 / 2,
+    borderRadius: 60 / 2,
     backgroundColor: '#cc8b53',
     color: '#000',
     position: 'absolute',
     bottom: 0,
     right: 0,
+    marginHorizontal: 10,
+    padding: 10
   },
 });
 
